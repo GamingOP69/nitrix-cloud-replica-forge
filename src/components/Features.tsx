@@ -1,6 +1,6 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Zap, Shield, Globe, Cpu, Database, Headphones } from "lucide-react";
+import { Shield, Cpu, Globe, Clock, Database } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 const Features = () => {
@@ -8,34 +8,34 @@ const Features = () => {
 
   const features = [
     {
-      icon: Zap,
-      title: "Lightning Fast",
-      description: "Deploy in seconds with our optimized build pipeline and global CDN network."
-    },
-    {
       icon: Shield,
       title: "Enterprise Security",
-      description: "Bank-grade security with SSL certificates, DDoS protection, and data encryption."
+      description: "Advanced DDoS protection and regular security updates to keep your data safe"
+    },
+    {
+      icon: Cpu,
+      title: "High Performance",
+      description: "Latest generation hardware with NVMe SSDs for lightning-fast performance"
     },
     {
       icon: Globe,
       title: "Global Network",
-      description: "200+ edge locations worldwide ensure your users get the fastest experience."
+      description: "Multiple locations worldwide with low-latency network connections"
     },
     {
-      icon: Cpu,
-      title: "Auto Scaling",
-      description: "Automatically scale your resources based on traffic with zero downtime."
+      icon: Clock,
+      title: "24/7 Support",
+      description: "Expert technical support available round the clock"
     },
     {
       icon: Database,
-      title: "Managed Databases",
-      description: "PostgreSQL, MySQL, and Redis databases with automatic backups and monitoring."
+      title: "Instant Deployment",
+      description: "Get your server up and running in minutes with our automated setup"
     },
     {
-      icon: Headphones,
-      title: "24/7 Support",
-      description: "Expert support team available around the clock to help you succeed."
+      icon: Database,
+      title: "Full Control",
+      description: "Root access and complete control over your server configuration"
     }
   ];
 
@@ -63,29 +63,25 @@ const Features = () => {
     <section id="features" className="py-20 px-4" ref={featuresRef}>
       <div className="container mx-auto">
         <div className="text-center mb-16 scroll-animate">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Everything You Need to
-            <span className="bg-gradient-to-r from-green-500 to-orange-500 bg-clip-text text-transparent"> Scale</span>
+          <h2 className="text-3xl md:text-5xl font-bold mb-8 text-foreground">
+            Why Choose Nitrix Cloud?
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Powerful features designed to make your development workflow seamless and your applications performant.
-          </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {features.map((feature, index) => (
             <Card 
               key={index} 
-              className="border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:scale-105 scroll-animate group"
+              className="bg-card border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg scroll-animate group"
               style={{animationDelay: `${index * 0.1}s`}}
             >
-              <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-green-500/20 to-orange-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:from-green-500/30 group-hover:to-orange-500/30 transition-all duration-300">
-                  <feature.icon className="h-6 w-6 text-primary group-hover:scale-110 transition-transform duration-300" />
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-lg flex items-center justify-center mb-4 mx-auto group-hover:from-purple-500/30 group-hover:to-blue-500/30 transition-all duration-300">
+                  <feature.icon className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <CardTitle className="text-xl">{feature.title}</CardTitle>
+                <CardTitle className="text-xl text-foreground">{feature.title}</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="text-center">
                 <p className="text-muted-foreground">{feature.description}</p>
               </CardContent>
             </Card>
